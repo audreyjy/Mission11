@@ -1,0 +1,28 @@
+﻿@{
+
+}
+
+@model BooksViewModel
+
+<h1>Book Store</h1>
+
+@foreach (Books b in Model.Books)
+{
+    <h3>@b.Title</h3>
+
+    <ul>
+        <li>Author: @b.Author</li>
+        <li>Publisher: @b.Publisher</li>
+        <li>ISBN: @b.Isbn</li>
+        <li>Classification/Category: @b.Classification / @b.Category</li>
+        <li>Number of Pages: @b.PageCount</li>
+        <li>Price: $@b.Price</li>
+    </ul>
+    <br />
+
+
+
+}
+
+<!-- 'page-model' is a special tag helper, pass it in all the page info that came in through the controller -->
+<div page-model="@Model.PageInfo" page-action="Index"></div> <!-- this line is what gives us our page links -->
