@@ -28,6 +28,7 @@ namespace BookStoreProject.Models.Infrastructure
         public PageInfo PageModel { get; set; }
         public string PageAction { get; set; }
 
+        // added the following 4 classes for bootstrap 
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -45,6 +46,7 @@ namespace BookStoreProject.Models.Infrastructure
 
                 tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
 
+                // added if for bootstrap 
                 if (PageClassesEnabled)
                 {
                     tb.AddCssClass(PageClass);
