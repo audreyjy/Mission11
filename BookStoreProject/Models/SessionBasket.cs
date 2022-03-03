@@ -32,7 +32,7 @@ namespace BookStoreProject.Models
         public override void RemoveItem(Books books)
         {
             base.RemoveItem(books);
-            Session.SetJson("Basket", this);
+            Session.SetJson("Basket", this); 
         }
 
         public override void ClearBasket()
