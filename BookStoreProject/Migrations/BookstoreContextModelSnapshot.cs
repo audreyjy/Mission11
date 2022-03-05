@@ -22,7 +22,7 @@ namespace BookStoreProject.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("BookId")
+                    b.Property<int?>("BooksBookId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Quantity")
@@ -33,7 +33,7 @@ namespace BookStoreProject.Migrations
 
                     b.HasKey("LineID");
 
-                    b.HasIndex("BookId");
+                    b.HasIndex("BooksBookId");
 
                     b.HasIndex("TransactionId");
 
@@ -131,9 +131,9 @@ namespace BookStoreProject.Migrations
 
             modelBuilder.Entity("BookStoreProject.Models.BasketLineItem", b =>
                 {
-                    b.HasOne("BookStoreProject.Models.Books", "Book")
+                    b.HasOne("BookStoreProject.Models.Books", "Books")
                         .WithMany()
-                        .HasForeignKey("BookId");
+                        .HasForeignKey("BooksBookId");
 
                     b.HasOne("BookStoreProject.Models.Transaction", null)
                         .WithMany("Lines")

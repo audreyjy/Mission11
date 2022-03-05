@@ -54,7 +54,7 @@ namespace BookStoreProject.Migrations
                 {
                     LineID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    BookId = table.Column<int>(nullable: true),
+                    BooksBookId = table.Column<int>(nullable: true),
                     Quantity = table.Column<int>(nullable: false),
                     TransactionId = table.Column<int>(nullable: true)
                 },
@@ -62,8 +62,8 @@ namespace BookStoreProject.Migrations
                 {
                     table.PrimaryKey("PK_BasketLineItem", x => x.LineID);
                     table.ForeignKey(
-                        name: "FK_BasketLineItem_Books_BookId",
-                        column: x => x.BookId,
+                        name: "FK_BasketLineItem_Books_BooksBookId",
+                        column: x => x.BooksBookId,
                         principalTable: "Books",
                         principalColumn: "BookId",
                         onDelete: ReferentialAction.Restrict);
@@ -76,9 +76,9 @@ namespace BookStoreProject.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_BasketLineItem_BookId",
+                name: "IX_BasketLineItem_BooksBookId",
                 table: "BasketLineItem",
-                column: "BookId");
+                column: "BooksBookId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BasketLineItem_TransactionId",
