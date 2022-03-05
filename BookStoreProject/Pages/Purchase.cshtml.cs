@@ -37,7 +37,7 @@ namespace BookStoreProject.Pages
 
         public IActionResult OnPostRemove(int bookId, string returnUrl)
         {
-            basket.RemoveItem(basket.Items.First(x => x.Book.BookId == bookId).Book); 
+            basket.RemoveItem(basket.Items.First(x => x.Books.BookId == bookId).Books); 
             return RedirectToPage(new {ReturnUrl = returnUrl}); 
         }
     }

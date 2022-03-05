@@ -14,14 +14,14 @@ namespace BookStoreProject.Models
         public virtual void AddItem (Books book, int qty)
         {
             BasketLineItem line = Items
-                .Where(b => b.Book.BookId == book.BookId)
+                .Where(b => b.Books.BookId == book.BookId)
                 .FirstOrDefault(); 
 
             if (line == null)
             {
                 Items.Add(new BasketLineItem
                 {
-                    Book = book,
+                    Books = book,
                     Quantity = qty
                 }); 
             }
@@ -35,7 +35,7 @@ namespace BookStoreProject.Models
 
         public virtual void RemoveItem (Books books)
         {
-            Items.RemoveAll(x => x.Book.BookId == books.BookId); 
+            Items.RemoveAll(x => x.Books.BookId == books.BookId); 
         }
 
         public virtual void ClearBasket()
@@ -45,7 +45,7 @@ namespace BookStoreProject.Models
 
         public double CalculateTotal()
         {
-            double sum = Items.Sum(x => x.Quantity * x.Book.Price );
+            double sum = Items.Sum(x => x.Quantity * x.Books.Price );
             return sum; 
         }
 
@@ -57,7 +57,7 @@ namespace BookStoreProject.Models
     {
         [Key]
         public int LineID { get; set; }
-        public Books Book { get; set; }
+        public Books Books { get; set; }
         public int Quantity { get; set; }
 
     }
