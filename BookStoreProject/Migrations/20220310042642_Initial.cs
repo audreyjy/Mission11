@@ -41,7 +41,8 @@ namespace BookStoreProject.Migrations
                     Zip = table.Column<string>(nullable: true),
                     Country = table.Column<string>(nullable: false),
                     Phone = table.Column<string>(nullable: false),
-                    Email = table.Column<string>(nullable: false)
+                    Email = table.Column<string>(nullable: false),
+                    Shipped = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
