@@ -1,9 +1,13 @@
 ﻿@page "/admin"
 @model BookStoreProject.Pages.Admin.IndexModel
 
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
 
 @{
+    Layout = null; 
 }
+
 
 
 <!DOCTYPE html>

@@ -10,58 +10,131 @@
 
 <EditForm Model="b" OnSubmit="SaveBook">
     <DataAnnotationsValidator></DataAnnotationsValidator>
-    <div class="form-group">
-        <label>Book Id</label>
-        <input class="form-control" disabled value="@b.BookId" />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Book Id</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled value="@b.BookId">
     </div>
-
-    <div class="form-group">
-        <lablel>Title:</lablel>
+    <br />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Title</span>
+        </div>
         <ValidationMessage For="@(() => b.Title)"></ValidationMessage>
-        <InputText class="form-control" @bind-Value="b.Title"></InputText>
+        <InputText type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" @bind-Value="b.Title"></InputText>
     </div>
-
-    <div class="form-group">
-        <lablel>Author:</lablel>
+    <br />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Author</span>
+        </div>
         <ValidationMessage For="@(() => b.Author)"></ValidationMessage>
-        <InputText class="form-control" @bind-Value="b.Author"></InputText>
+        <InputText type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" @bind-Value="b.Author"></InputText>
     </div>
-
-    <div class="form-group">
-        <label>Publisher:</label>
+    <br />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Publisher</span>
+        </div>
         <ValidationMessage For="@(() => b.Publisher)"></ValidationMessage>
-        <InputText class="form-control" @bind-Value="b.Publisher"></InputText>
+        <InputText type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" @bind-Value="b.Publisher"></InputText>
     </div>
-
-    <div class="form-group">
-        <label>ISBN:</label>
+    <br />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">ISBN</span>
+        </div>
         <ValidationMessage For="@(() => b.Isbn)"></ValidationMessage>
-        <InputText class="form-control" @bind-Value="b.Isbn"></InputText>
+        <InputText type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" @bind-Value="b.Isbn"></InputText>
     </div>
-
-    <div class="form-group">
-        <label>Classification:</label>
+    <br />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Classification</span>
+        </div>
         <ValidationMessage For="@(() => b.Classification)"></ValidationMessage>
-        <InputText class="form-control" @bind-Value="b.Classification"></InputText>
+        <InputText type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" @bind-Value="b.Classification"></InputText>
     </div>
-
-    <div class="form-group">
-        <label>Category:</label>
+    <br />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Category</span>
+        </div>
         <ValidationMessage For="@(() => b.Category)"></ValidationMessage>
-        <InputText class="form-control" @bind-Value="b.Category"></InputText>
+        <InputText type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" @bind-Value="b.Category"></InputText>
     </div>
-
-    <div class="form-group">
-        <label>Page Count:</label>
+    <br />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Page Count</span>
+        </div>
         <ValidationMessage For="@(() => b.PageCount)"></ValidationMessage>
-        <InputNumber class="form-control" @bind-Value="b.PageCount"></InputNumber>
+        <InputNumber type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" @bind-Value="b.PageCount"></InputNumber>
     </div>
-
-    <div class="form-group">
-        <label>Price:</label>
+    <br />
+    <div class="input-group input-group-sm">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
+        </div>
         <ValidationMessage For="@(() => b.Price)"></ValidationMessage>
-        <InputNumber class="form-control" @bind-Value="b.Price"></InputNumber>
+        <InputNumber type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" @bind-Value="b.Price"></InputNumber>
     </div>
+    <br />
+
+
+    @*<div class="form-group">
+            <label>Book Id</label>
+            <input class="form-control" disabled value="@b.BookId" />
+        </div>
+
+        <div class="form-group">
+            <lablel>Title:</lablel>
+            <ValidationMessage For="@(() => b.Title)"></ValidationMessage>
+            <InputText class="form-control" @bind-Value="b.Title"></InputText>
+        </div>
+
+        <div class="form-group">
+            <lablel>Author:</lablel>
+            <ValidationMessage For="@(() => b.Author)"></ValidationMessage>
+            <InputText class="form-control" @bind-Value="b.Author"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label>Publisher:</label>
+            <ValidationMessage For="@(() => b.Publisher)"></ValidationMessage>
+            <InputText class="form-control" @bind-Value="b.Publisher"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label>ISBN:</label>
+            <ValidationMessage For="@(() => b.Isbn)"></ValidationMessage>
+            <InputText class="form-control" @bind-Value="b.Isbn"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label>Classification:</label>
+            <ValidationMessage For="@(() => b.Classification)"></ValidationMessage>
+            <InputText class="form-control" @bind-Value="b.Classification"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label>Category:</label>
+            <ValidationMessage For="@(() => b.Category)"></ValidationMessage>
+            <InputText class="form-control" @bind-Value="b.Category"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label>Page Count:</label>
+            <ValidationMessage For="@(() => b.PageCount)"></ValidationMessage>
+            <InputNumber class="form-control" @bind-Value="b.PageCount"></InputNumber>
+        </div>
+
+        <div class="form-group">
+            <label>Price:</label>
+            <ValidationMessage For="@(() => b.Price)"></ValidationMessage>
+            <InputNumber class="form-control" @bind-Value="b.Price"></InputNumber>
+        </div>*@
 
     <button type="submit" class="btn btn-@ThemeColor">Save</button>
     <NavLink class="btn btn-secondary" href="/admin/books">Cancel</NavLink>
